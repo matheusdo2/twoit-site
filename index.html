@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TWO IT • Gestão Completa em TI</title>
+  <meta name="description" content="TWO IT - Soluções e gestão completa em TI. Suporte, infraestrutura, consultoria e manutenção para sua empresa." />
+  <style>
+    :root{
+      --orange:#ff7a00;
+      --orange-700:#e45e00;
+      --dark:#2a2f35;
+      --muted:#6b7280;
+      --light:#ffffff;
+      --bg:#f7f7f7;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:var(--dark);background:var(--bg)}
+    html{scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:60px;width:auto}
+    .brand h1{font-size:18px;margin:0;font-weight:800;letter-spacing:.4px}
+    nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    nav a{font-weight:600;color:#394149}
+    nav a:hover{color:var(--orange)}
+    .cta{background:var(--orange);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+    .cta:hover{background:var(--orange-700)}
+
+    .hero{position:relative}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,122,0,.10),rgba(255,122,0,0)),url('');background-position:center;background-size:cover;background-repeat:no-repeat}
+    .hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:68px 20px 52px}
+    .hero-card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .kicker{color:var(--orange);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    .hero h2{font-size:40px;line-height:1.08;margin:10px 0 14px}
+    .hero p{color:var(--muted);font-size:16px;margin:0 0 20px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 12px;font-weight:700}
+    .hero-media{display:flex;align-items:center;justify-content:center}
+    .hero-media .logo{height:300px;width:auto;opacity:.95;filter:drop-shadow(0 10px 24px rgba(0,0,0,.08))}
+    .actions{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-primary:hover{background:var(--orange-700)}
+    .btn-ghost{border:1px solid #eee;background:#fff}
+
+    section{padding:70px 0}
+    section h3{font-size:28px;margin:0 0 10px}
+    section p.lead{color:var(--muted);margin-top:0}
+
+    .about{background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about .block{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .about-illustration{min-height:220px;border:2px dashed #ffd4ad;border-radius:var(--radius);display:flex;align-items:center;justify-content:center}
+
+    .services{background:linear-gradient(180deg,#fff,#fff7ef)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h4{margin:8px 0 6px}
+    .icon{height:42px;width:42px;border-radius:12px;background:rgba(255,122,0,.12);display:flex;align-items:center;justify-content:center;font-size:22px}
+
+    .features{background:#fff}
+    .features .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+    .features .item{background:#fff;border-radius:var(--radius);padding:18px;border:1px solid #f1f1f1}
+
+    .contact{background:linear-gradient(180deg,#fff7ef,#fff)}
+    .contact .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .contact .box{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .contact .hint{color:var(--muted)}
+    .contact .map{height:260px;border-radius:var(--radius);background:#eee}
+
+    footer{padding:26px 0;background:#14161a;color:#cbd5e1}
+    footer .row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer small{opacity:.85}
+    footer .cnpj{font-size:13px;color:#9ca3af;margin-top:10px}
+
+    @media (max-width:920px){.hero .container{grid-template-columns:1fr}.about-grid,.contact .wrap{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.features .grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){nav ul{display:none}.cards,.features .grid{grid-template-columns:1fr}.hero h2{font-size:32px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#topo">
+        <img src="img/logo peq.png" alt="TWO IT" />
+        <h1>TWO IT</h1>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="https://wa.me/5527999482815" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="topo" class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <span class="kicker">Gestão completa em TI</span>
+        <h2>Suporte, infraestrutura e consultoria <br> para sua empresa funcionar sem dor de cabeça.</h2>
+        <p>Da manutenção ao planejamento, a <strong>TWO IT</strong> cuida de tudo: redes, servidores, nuvem, segurança, impressão e atendimento rápido.</p>
+        <div class="badges">
+          <span class="badge">SLA ágil</span>
+          <span class="badge">Atendimento remoto e local</span>
+          <span class="badge">Contratos flexíveis</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#servicos">Ver serviços</a>
+          <a class="btn btn-ghost" href="#contato">Pedir orçamento</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="logo" src="img/logo grande lateral.png" alt="Logo TWO IT" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <div class="container about-grid">
+      <div class="block">
+        <h3>Quem somos</h3>
+        <p class="lead">A <strong>TWO IT Soluções em Tecnologia LTDA - EPP</strong> é uma empresa capixaba especializada em gestão completa de TI. Fundada em <strong>11 de maio de 2023</strong>, está sediada em <strong>Serra - ES</strong> e possui mais de dois anos de atuação ajudando empresas a manter seus ambientes tecnológicos estáveis e seguros.</p>
+        <p>Oferecemos soluções sob medida em infraestrutura, suporte técnico, redes e consultoria. Nosso foco é entregar eficiência, confiança e tecnologia de ponta para o seu negócio.</p>
+      </div>
+      <div class="about-illustration">
+        <div class="about-illustration">
+  <img src="img/PARQUE DA CIDADE.jpg" alt="Equipe TWO IT" style="width:100%; height:100%; object-fit:cover; border-radius:18px;">
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="services">
+    <div class="container">
+      <h3>Serviços</h3>
+      <p class="lead">Tudo que a sua empresa precisa em TI, em um só lugar.</p>
+      <div class="cards">
+  <div class="card">
+    <div class="icon"><img src="img/assistant.png" alt="assistant" style="height:32px; width:auto;"></div>
+    <h4>Suporte & Help Desk</h4>
+    <p>Atendimento remoto e presencial, configuração, backup e manutenção preventiva/corretiva.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="img/digital.png" alt="digital" style="height:32px; width:auto;"></div>
+    <h4>Infraestrutura & Redes</h4>
+    <p>Switches, roteadores, Wi-Fi profissional, cabeamento estruturado e monitoramento.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="img/shield.png" alt="shield" style="height:32px; width:auto;"></div>
+    <h4>Segurança</h4>
+    <p>Firewall, antivírus corporativo, políticas de acesso e conscientização de usuários.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="img/server.png" alt="server" style="height:32px; width:auto;"></div>
+    <h4>Nuvem & E-mail</h4>
+    <p>Microsoft 365/Google Workspace, migração, gestão de contas e boas práticas.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="img/paper.png" alt="paper" style="height:32px; width:auto;"></div>
+    <h4>Impressão & Equipamentos</h4>
+    <p>Configuração, contratos de impressão, inventário e controle de custos.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="img/consultant.png" alt="consultant" style="height:32px; width:auto;"></div>
+    <h4>Consultoria</h4>
+    <p>Mapeamento de necessidades, planos de crescimento e redução de riscos.</p>
+  </div>
+</div>
+
+  </section>
+
+  <section id="diferenciais" class="features">
+    <div class="container">
+      <h3>Por que a TWO IT?</h3>
+      <div class="grid">
+        <div class="item"><strong>Atendimento humano</strong><br><span class="hint">Fala direta no WhatsApp, sem burocracia.</span></div>
+        <div class="item"><strong>Transparência</strong><br><span class="hint">Relatórios e status claros do que foi feito.</span></div>
+        <div class="item"><strong>Documentação</strong><br><span class="hint">Ambiente organizado e replicável.</span></div>
+        <div class="item"><strong>Custo sob medida</strong><br><span class="hint">Planos para cada fase do negócio.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="container wrap">
+      <div class="box">
+        <h3>Vamos conversar?</h3>
+        <p class="lead">Tire dúvidas e peça um orçamento sem compromisso.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5527999482815" target="_blank" rel="noopener">WhatsApp: (27) 99948-2815</a>
+          <a class="btn btn-ghost" href="mailto:suporte.twoit@gmail.com">suporte.twoit@gmail.com</a>
+        </div>
+        <p class="hint" style="margin-top:12px">Horário comercial — atendimento remoto e a domicílio.</p>
+      </div>
+      <div class="map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.5859223728226!2d-40.26877902555148!3d-20.192959246549307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81edfd85bd9c5%3A0x21f39de3d93cdb7b!2sAv.%20Eldes%20Scherrer%20Souza%2C%202162%20-%20Colina%20de%20Laranjeiras%2C%20Serra%20-%20ES%2C%2029167-080!5e0!3m2!1spt-BR!2sbr!4v1762180968183!5m2!1spt-BR!2sbr"
+    width="100%"
+    height="100%"
+    style="border:0; border-radius:18px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container row">
+      <small>© <span id="ano"></span> TWO IT •Todos os Direitos Reservados</small>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
